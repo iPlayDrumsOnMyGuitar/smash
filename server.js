@@ -16,7 +16,6 @@ MongoClient.connect(dbConnectionString)
         console.log('Connected to Database')
         db = client.db(dbName)
         collection - db.collection('smashing')
-
     })
 
 app.set('view engine', 'ejs')
@@ -25,7 +24,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
 
-app.get('/', async (req, res) => {
+app.get('/', async (request, response) => {
     try{
         response.render('index.ejs')
     }catch (error){
