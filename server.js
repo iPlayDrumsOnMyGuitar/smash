@@ -28,7 +28,7 @@ app.use(cors())
 app.get('/', async (req, res) => {
     try{
         response.render('index.ejs')
-    }catch (error){ß
+    }catch (error){
 
     }
 })
