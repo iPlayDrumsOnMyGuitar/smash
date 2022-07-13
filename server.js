@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const { response } = require('express')
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 const PORT = 8000
@@ -24,8 +25,18 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
 
+app.get('/', async (req, res) => {
+    try{
+        response.render('index.ejs')
+    }catch (error){ß
+
+    }
+})
+
+
 //DB_STRING
 //PORT = 8000
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 }) 
+
