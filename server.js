@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
     try{
         response.render('index.ejs')
     }catch (error){
-
+        response.status(500).send({message: error.message})
     }
 })
 
